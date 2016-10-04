@@ -1,0 +1,5 @@
+#!/bin/bash
+
+original_string='echo "Holberton"'
+string_to_replace_Suzi_with='echo "Holberton School"'
+result_string="${original_string/Suzi/$string_to_replace_Suzi_with}"
