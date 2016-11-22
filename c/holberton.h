@@ -19,6 +19,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int my_number(int n);
 void my_struct(void);
-int my_percentage(int p);
+int my_percentage(int per);
 void _puts(char *str);
 #endif
