@@ -32,7 +32,7 @@ int my_percentage(int per)
  * @s: ptr to char str
  * @b: base
  
-int itoa(int n, char *s, int b) 
+int itoa(int n, char s[], int b) 
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	int i=0, sign;
@@ -57,9 +57,6 @@ int itoa(int n, char *s, int b)
 int my_number(int n)
 {
 char buffer[5];
-int b;
-
-b = 10;
 
 itoa(n, buffer, 10);
 }
