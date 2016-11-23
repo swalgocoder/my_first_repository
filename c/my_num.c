@@ -27,23 +27,6 @@ int my_percentage(int per)
 }
 
 /**
- * _abs - absolute value of an integer
- * @i: interger to computer
- *
- * Return: absolute value;
- */
-int _abs(int i)
-{
-	if (i < 0)
-	{
-		i = i * -1;
-		return (i);
-	}
-	else
-		return (i);
-}
-
-/**
  * itoa - integer to string
  * @n: integer
  * @s: array of chars
@@ -52,20 +35,19 @@ int _abs(int i)
  */
 int itoa(int n, char s[])
 {
-	int i;
-
-	i = 0;
-	if (n / 10 != 0)
-		i = itoa(n / 10, s);
-	else if (n < 0)
+	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	int i=0, sign;
+    
+	if ((sign = n) < 0)
+		n = -n;
+	do {
+		s[i++] = digits[n % 10];
+	} while ((n /= 10) > 0);
+	if (sign < 0)
 		s[i++] = '-';
-
-	s[i++] = _abs(n % 10) + '0';
 	s[i] = '\0';
-
 	return (i);
 }
-
 /**
  * my_number - prints numbers
  * @n: number
