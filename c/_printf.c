@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 {
 	va_list ptr_args;
 	int i, j, char_count;
-	my_type data_type[] = {
+	my_type my_data_type[] = {
 		{"s", my_str},
 		{"c", my_char},
 		{"%", my_percentage},
@@ -80,9 +80,9 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (j < 5)
 			{
-				if (*data_type[j].s == format[i])
+				if (*my_data_type[j].s == format[i])
 				{
-					char_count += (data_type[j].f(ptr_args));
+					char_count += (my_data_type[j].f(ptr_args));
 				}
 				j++;
 			}
