@@ -5,7 +5,7 @@
 /**
  *struct print_a - A struct that has a pointer character and a pointer
  *to a function
- *@s: a character pointer
+ *@check_char: a character pointer
  *@f: a function pointer
  */
 typedef struct data_type
@@ -14,7 +14,7 @@ typedef struct data_type
 	int *(*f)();
 } my_type;
 
-int my_format(va_list args, my_type data_type[], char format);
+int my_format(va_list ptr_args, my_type data_type[], char format);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int my_number(int n);
