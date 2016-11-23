@@ -1,11 +1,11 @@
 #include "holberton.h"
 #include <stdarg.h>
 /**
- *_puts - a function that prints out the string followed by a new line.
- *@str: a variable that contains the string.
+ *my_puts_str - str followed by a new line
+ *@str: string
  *
  */
-void _puts(char *str)
+void my_puts_str(char *str)
 {
 	int i;
 
@@ -15,20 +15,20 @@ void _puts(char *str)
 	}
 }
 /**
- *my_percentage - a function that accounts for %% as an input
- *@per: A parameter that stores a % and prints it
- *Return: Return the % character
+ *my_percentage - % as an input
+ *@per: A %
+ *Return: the % char
  */
-int print_per(int per)
+int my_percentage(int per)
 {
 	per = '%';
 	_putchar(per);
 	return (1);
 }
 /**
- * my_number - A function that prints out numbers
- * @n: number to print
- * Return: the number
+ * my_number - prints out numbers
+ * @n: number
+ * Return: number
  */
 //int my_number(int n)
 //{
@@ -71,11 +71,12 @@ int print_per(int per)
 
 
 /**
- * my_number - A function that prints out numbers
- * @n: number to print
- * Return: the number
+ * my_number - prints numbers
+ * @n: number
+ * Return: number
  */
 int my_number(int n)
+{
 char buffer[5];
 
 
@@ -128,3 +129,4 @@ char *itoa(int n, char *s)
 }
 
 *itoa(n, buffer);
+}
