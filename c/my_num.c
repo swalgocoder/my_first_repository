@@ -58,5 +58,5 @@ int my_number(int n)
 {
 char buffer[5];
 
-itoa(n, buffer);
+return(itoa(n, buffer));
 }
