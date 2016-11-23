@@ -112,7 +112,7 @@ char buffer[5];
 //	return str;
 //}
 
-char *itoa(int n, char *s) 
+char *itoa(int n, char *s, int b) 
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	int i=0, sign;
@@ -120,7 +120,7 @@ char *itoa(int n, char *s)
 	if ((sign = n) < 0)
 		n = -n;
 	do {
-		s[i++] = digits[n % 10];
+		s[i++] = digits[n % b];
 	} while ((n /= b) > 0);
 	if (sign < 0)
 		s[i++] = '-';
@@ -128,5 +128,5 @@ char *itoa(int n, char *s)
 	return (i);
 }
 
-*itoa(n, buffer);
+*itoa(n, buffer, 10);
 }
