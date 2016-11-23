@@ -3,8 +3,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 /**
- *struct print_a - A struct that has a pointer character and a pointer
- *to a function
+ *struct data_type - A struct that has a pointer character and a pointer
  *@check_char: a character pointer
  *@f: a function pointer
  */
