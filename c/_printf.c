@@ -2,16 +2,16 @@
 #include <unistd.h>
 #include <stdarg.h>
 /**
- *my_str - a function that prints out a string
- *@ptr_args: a list of all the arguments that the function will take
- *Return: The number of characters
+ *my_str - prints out a string
+ *@ptr_args: ptr to arguments
+ *Return: The number of char
  */
 int my_str(va_list ptr_args)
 {
 	char *j;
-	int i, chars;
+	int i, char_count;
 
-	chars = 0;
+	char_count = 0;
 	j = va_arg(ptr_args, char *);
 	if (j == NULL)
 		j = "(null)";
@@ -20,9 +20,9 @@ int my_str(va_list ptr_args)
 	{
 		_putchar(j[i]);
 		i++;
-		chars++;
+		char_count++;
 	}
-	return (chars);
+	return (char_count);
 }
 /**
  *my_char - a funciton that prints out a character
@@ -38,17 +38,17 @@ int my_char(va_list ptr_args)
 	return (1);
 }
 /**
- *my_int - A function that prints out the integer
- *@args: a variable that takes in a varrying amount of function arguments
+ *my_int - prints out the integer
+ *@ptr_args: a variable that takes in a varrying amount of function arguments
  *Return: The character
  */
-int my_int(va_list args)
+int my_int(va_list ptr_args)
 {
-	int n, chars;
+	int n, char_count;
 
 	n = va_arg(ptr_args, int);
-	chars = print_number(n);
-	return (chars);
+	char_count = print_number(n);
+	return (char_count);
 }
 /**
  *_printf - Remaking the printf function in the standard input output library
@@ -58,7 +58,7 @@ int my_int(va_list args)
 int _printf(const char *format, ...)
 {
 	va_list ptr_args;
-	int i, j, chars;
+	int i, j, char_count;
 	my_type data_type[] = {
 		{"s", my_str},
 		{"c", my_char},
@@ -69,9 +69,9 @@ int _printf(const char *format, ...)
 	};
 	va_start(ptr_args, format);
 
-	chars = i = 0;
+	char_count = i = 0;
 	if (format == NULL || ptr_args == NULL)
-		return (chars);
+		return (char_count);
 	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 			{
 				if (*data_type[j].s == format[i])
 				{
-					chars += (data_type[j].f(ptr_args));
+					char_count += (data_type[j].f(ptr_args));
 				}
 				j++;
 			}
@@ -90,10 +90,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
-			chars++;
+			char_count++;
 		}
 		i++;
 	}
 	va_end(ptr_args);
-	return (chars);
+	return (char_count);
 }
