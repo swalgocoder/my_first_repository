@@ -47,7 +47,7 @@ int my_int(va_list ptr_args)
 	int n, char_count;
 
 	n = va_arg(ptr_args, int);
-	char_count = print_number(n);
+	char_count = my_number(n);
 	return (char_count);
 }
 /**
