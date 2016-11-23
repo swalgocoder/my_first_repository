@@ -27,24 +27,42 @@ int my_percentage(int per)
 }
 
 /**
- * itoa - itoa home made
- * @n: number
- * @s: ptr to char str
- * @b: base
- 
-int itoa(int n, char s[], int b) 
+ * _abs - absolute value of an integer
+ * @i: interger to computer
+ *
+ * Return: absolute value;
+ */
+int _abs(int i)
 {
-	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	int i=0, sign;
-    
-	if ((sign = n) < 0)
-		n = -n;
-	do {
-		s[i++] = digits[n % b];
-	} while ((n /= b) > 0);
-	if (sign < 0)
+	if (i < 0)
+	{
+		i = i * -1;
+		return (i);
+	}
+	else
+		return (i);
+}
+
+/**
+ * itoa - integer to string
+ * @num: integer
+ * @s: array of chars
+ *
+ * Return: int
+ */
+int itoa(int num, char s[])
+{
+	int i;
+
+	i = 0;
+	if (num / 10 != 0)
+		i = itoa(num / 10, s);
+	else if (num < 0)
 		s[i++] = '-';
+
+	s[i++] = _abs(num % 10) + '0';
 	s[i] = '\0';
+
 	return (i);
 }
 
@@ -58,5 +76,5 @@ int my_number(int n)
 {
 char buffer[5];
 
-itoa(n, buffer, 10);
+itoa(n, buffer);
 }
