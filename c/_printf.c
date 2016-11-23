@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 /**
- *my_str - prints out a string
+ *my_str - prints a string
  *@ptr_args: ptr to arguments
  *Return: The number of char
  */
@@ -25,9 +25,9 @@ int my_str(va_list ptr_args)
 	return (char_count);
 }
 /**
- *my_char - a funciton that prints out a character
- *@args: a variable that takes in a varrying amount of function arguments
- *Return: Zero is returned
+ *my_char - prints out a character
+ *@ptr_args: ptr to args
+ *Return: 0
  */
 int my_char(va_list ptr_args)
 {
@@ -39,8 +39,8 @@ int my_char(va_list ptr_args)
 }
 /**
  *my_int - prints out the integer
- *@ptr_args: a variable that takes in a varrying amount of function arguments
- *Return: The character
+ *@ptr_args: ptr arguments
+ *Return: The char
  */
 int my_int(va_list ptr_args)
 {
@@ -51,9 +51,9 @@ int my_int(va_list ptr_args)
 	return (char_count);
 }
 /**
- *_printf - Remaking the printf function in the standard input output library
- *@format: Detects what format the arguments come in as
- *Return: The number of characters to be printed
+ *_printf - home made printf function
+ *@format: format the arguments comes
+ *Return: The number of char printed
  */
 int _printf(const char *format, ...)
 {
