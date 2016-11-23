@@ -22,5 +22,6 @@ void my_struct(void);
 int my_percentage(int per);
 void my_puts_str(char *str);
 int my_str(va_list ptr_args);
-char *itoa(int n, char *s);
+int itoa(int num, char s[]);
+int _abs(int i);
 #endif
