@@ -20,6 +20,7 @@ int _putchar(char c);
 int my_number(int n);
 void my_struct(void);
 int my_percentage(int per);
-void _puts(char *str);
+void my_puts_str(char *str);
 int my_str(va_list ptr_args);
+char *itoa(int n, char *s);
 #endif
