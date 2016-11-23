@@ -80,7 +80,7 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (j < 5)
 			{
-				if (*my_data_type[j].s == format[i])
+				if (*my_data_type[j].check_char == format[i])
 				{
 					char_count += (my_data_type[j].f(ptr_args));
 				}
