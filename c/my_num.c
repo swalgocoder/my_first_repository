@@ -45,22 +45,22 @@ int _abs(int i)
 
 /**
  * itoa - integer to string
- * @num: integer
+ * @n: integer
  * @s: array of chars
  *
  * Return: int
  */
-int itoa(int num, char s[])
+int itoa(int n, char s[])
 {
 	int i;
 
 	i = 0;
-	if (num / 10 != 0)
-		i = itoa(num / 10, s);
-	else if (num < 0)
+	if (n / 10 != 0)
+		i = itoa(n / 10, s);
+	else if (n < 0)
 		s[i++] = '-';
 
-	s[i++] = _abs(num % 10) + '0';
+	s[i++] = _abs(n % 10) + '0';
 	s[i] = '\0';
 
 	return (i);
