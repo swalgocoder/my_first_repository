@@ -78,7 +78,9 @@ int my_percentage(int per)
 int my_number(int n)
 {
 char buffer[5];
+int b;
 
+b = 10;
 
 //int main() {
 //	int num = 123;
