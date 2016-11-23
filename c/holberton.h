@@ -21,4 +21,5 @@ int my_number(int n);
 void my_struct(void);
 int my_percentage(int per);
 void _puts(char *str);
+int my_str(va_list ptr_args);
 #endif
