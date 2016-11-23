@@ -25,96 +25,14 @@ int my_percentage(int per)
 	_putchar(per);
 	return (1);
 }
-/**
- * my_number - prints out numbers
- * @n: number
- * Return: number
- */
-//int my_number(int n)
-//{
-//	int sign, ten, chars;
-//
-//	chars = 0;
-//	sign = 1;
-//	ten = 1000000000;
-//	if (n > 0)
-//	{
-//		n = n * -1;
-//		sign = sign * -1;
-//	}
-//	if (n != 0)
-//	{
-//		while (n / ten == 0)
-//		{
-//			ten = ten / 10;
-//		}
-//		if (sign == 1)
-//		{
-//			_putchar('-');
-//			chars++;
-//		}
-//		while (ten >= 1)
-//		{
-//			_putchar(-(n / ten) + '0');
-//			chars++;
-//			n = n % ten;
-//			ten = ten / 10;
-//		}
-//	}
-//	else
-//	{
-//		_putchar('0');
-//		chars++;
-//	}
-//	return (chars);
-//}
-
 
 /**
- * my_number - prints numbers
+ * itoa - itoa home made
  * @n: number
- * Return: number
- */
-int my_number(int n)
-{
-char buffer[5];
-int b;
-
-b = 10;
-
-//int main() {
-//	int num = 123;
-//	char buf[5];
-//	itoa(num, buf, 10);
-//	printf("%s\n", buf);
-//	return 0;
-//}
-
-//int strlen(char *string) 
-//{
-//	char *s;
-//  int count;
-//	s = string;
-//	while (*s)
-//		s++;
-//    count;
-//	return (count);
-//}
-
-//char *strrev(char *str) 
-//{
-//	char *p1, *p2;
-//	if (!str || !*str)
-//		return str;
-//	for (p1 = str, p2 = str + strlen(str) - 1; p2 > p1; ++p1, --p2) {
-//		*p1 ^= *p2;
-//		*p2 ^= *p1;
-//		*p1 ^= *p2;
-//	}
-//	return str;
-//}
-
-char *itoa(int n, char *s, int b) 
+ * @s: ptr to char str
+ * @b: base
+ 
+int itoa(int n, char *s, int b) 
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	int i=0, sign;
@@ -130,5 +48,18 @@ char *itoa(int n, char *s, int b)
 	return (i);
 }
 
-*itoa(n, buffer, 10);
+/**
+ * my_number - prints numbers
+ * @n: number
+ * Return: number
+ */
+
+int my_number(int n)
+{
+char buffer[5];
+int b;
+
+b = 10;
+
+itoa(n, buffer, 10);
 }
